@@ -51,7 +51,7 @@ function Slider() {
     const bigint = parseInt(hex.replace("#", ""), 16);
     const r = (bigint >> 16) & 255;
     const g = (bigint >> 8) & 255;
-    const b = bigint & 255;
+    let b = bigint & 255;
     return [r, g, b];
   };
 
@@ -70,15 +70,16 @@ function Slider() {
     return [r, g, b];
   };
 
+  const gradientColors = generateGradientColors(
+    barsCount,
+    "#fbcfe8",
+    "#6b21a8"
+  );
+
   return (
     <div className="flex flex-col items-center justify-center gap-2">
       {(["ACC", "TSP", "TRA", "BRA"] as LabelType[]).map((label) => {
         const barValue = Math.round((values[label] / 100) * barsCount);
-        const gradientColors = generateGradientColors(
-          barValue,
-          "#00ffff",
-          "#0000ff"
-        );
 
         return (
           <div key={label} className="flex items-center justify-center">
@@ -94,11 +95,7 @@ function Slider() {
                   className={style.bar}
                   style={{
                     backgroundColor:
-                      index < barValue
-                        ? gradientColors[
-                            Math.floor((index / barValue) * (barValue - 1))
-                          ]
-                        : "transparent",
+                      index < barValue ? gradientColors[index] : "transparent",
                   }}
                 ></div>
               ))}
