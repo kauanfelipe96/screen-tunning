@@ -7,10 +7,10 @@ type LabelType = "ACC" | "TSP" | "TRA" | "BRA";
 
 function Slider() {
   const [values, setValues] = useState<Record<LabelType, number>>({
-    ACC: 100,
-    TSP: 100,
-    TRA: 100,
-    BRA: 100,
+    ACC: 0,
+    TSP: 0,
+    TRA: 0,
+    BRA: 0,
   });
 
   const handleDrag = (e: React.MouseEvent, label: LabelType) => {
@@ -72,8 +72,8 @@ function Slider() {
 
   const gradientColors = generateGradientColors(
     barsCount,
-    "#fbcfe8",
-    "#6b21a8"
+    "#00ffff",
+    "#0000ff"
   );
 
   return (
@@ -85,7 +85,7 @@ function Slider() {
           <div key={label} className="flex items-center justify-center">
             <h1 className="font-['Aldrich'] text-gray-400 mr-2">{label}</h1>
             <div
-              className={style.box}
+              className={`${style.box} cursor-pointer`}
               onMouseDown={(e) => handleDrag(e, label)}
               onMouseMove={(e) => handleMouseMove(e, label)}
             >
@@ -101,7 +101,7 @@ function Slider() {
               ))}
             </div>
             <div
-              className={`${style.box} text-white font-bold text-2xl pl-10 font-['Aldrich']`}
+              className={`${style.box} w-[100px] text-white font-bold text-2xl pl-10 font-['Aldrich']`}
             >
               {Math.round(values[label])}
             </div>
