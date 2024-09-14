@@ -83,7 +83,7 @@ function Slider() {
 
         return (
           <div key={label} className="flex items-center justify-center">
-            <h1 className="font-['Aldrich'] text-gray-400 mr-2">{label}</h1>
+            <h1 className="font-['Aldrich'] text-slate-50 mr-2">{label}</h1>
             <div
               className={`${style.box} cursor-pointer`}
               onMouseDown={(e) => handleDrag(e, label)}
