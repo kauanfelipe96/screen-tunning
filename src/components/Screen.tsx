@@ -7,13 +7,10 @@ import ft450 from '../assets/ft450.png'
 
 function Screen() {
   return (
-    <div className="h-[100vh] w-[100vw] flex items-center justify-center bg-sky-950/30">
+    <div className="h-[100vh] w-[100vw] flex items-center justify-center bg-sky-950/25">
       <img src={ft450} className="absolute w-[800px]"/>
       <div className="flex items-center justify-center">
         <div className="pt-10 z-10 flex flex-col items-center justify-between bg-zinc-950 w-[431px] h-[252px]">
-          {/* <div className="flex items-center justify-center gap-2  bg-black p-3 rounded-b-xl font-['Aldrich'] text-slate-50">
-            Tuning System
-          </div> */}
           <div className="flex items-center justify-center">
             <Slider />
             {/* <div className="bg-black rounded-l-xl p-3 ml-5 gap-3 flex flex-col items-center justify-center">
@@ -31,10 +28,10 @@ function Screen() {
               </button>
             </div> */}
           </div>
-          <div className="flex items-center justify-center gap-2 bg-black p-3 rounded-t-xl ">
-            <MdOutlineRefresh className="text-[30px] text-gray-400 p-1 hover:bg-slate-600 hover:text-slate-50 rounded-md duration-500 cursor-pointer" />
-            <MdSave className="text-[30px] text-gray-400 p-1 hover:bg-slate-600 hover:text-slate-50 rounded-md duration-500 cursor-pointer" />
-            <MdCheckCircleOutline className="text-[30px] text-gray-400 p-1 hover:bg-slate-600 hover:text-slate-50 rounded-md duration-500 cursor-pointer" />
+          <div className="flex items-center justify-center gap-2 p-3 rounded-t-xl ">
+            <MdOutlineRefresh className="text-[30px] bg-black text-gray-400 p-1  hover:text-red-400  rounded-md duration-500 cursor-pointer shadow-sm hover:shadow-red-500" />
+            <MdSave className="text-[30px] bg-black text-gray-400 p-1  hover:text-blue-800 rounded-md duration-500 cursor-pointer shadow-sm hover:shadow-blue-800" />
+            <MdCheckCircleOutline className="text-[30px] bg-black text-gray-400 p-1 hover:text-green-400 rounded-md duration-500 cursor-pointer shadow-sm hover:shadow-green-800" />
           </div>
         </div>
       </div>

@@ -13,7 +13,10 @@ function Slider() {
     BRA: 0,
   });
 
+  const [activeSlider, setActiveSlider] = useState<LabelType | null>(null);
+
   const handleDrag = (e: React.MouseEvent, label: LabelType) => {
+    e.preventDefault();
     const box = e.currentTarget;
     const rect = box.getBoundingClientRect();
     const newValue = Math.min(
@@ -24,9 +27,17 @@ function Slider() {
   };
 
   const handleMouseMove = (e: React.MouseEvent, label: LabelType) => {
-    if (e.buttons === 1) {
+    if (e.buttons === 1  && activeSlider === label) {
       handleDrag(e, label);
     }
+  };
+  const handleMouseUp = () => {
+    setActiveSlider(null);
+  };
+
+  const handleMouseDown = (e: React.MouseEvent, label: LabelType) => {
+    setActiveSlider(label); 
+    handleDrag(e, label); 
   };
 
   const generateGradientColors = (
@@ -77,16 +88,17 @@ function Slider() {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center gap-2">
+    <div className="flex flex-col items-center justify-center gap-2 onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}">
       {(["ACC", "TSP", "TRA", "BRA"] as LabelType[]).map((label) => {
         const barValue = Math.round((values[label] / 100) * barsCount);
 
         return (
-          <div key={label} className="flex items-center justify-center">
+          <div key={label} className="flex items-center justify-center" onMouseUp={handleMouseUp}>
             <h1 className="font-['Aldrich'] text-slate-50 mr-2  text-sm font-bold">{label}</h1>
             <div
               className={`${style.box} cursor-pointer`}
-              onMouseDown={(e) => handleDrag(e, label)}
+              onMouseDown={(e) => handleMouseDown(e, label)}
               onMouseMove={(e) => handleMouseMove(e, label)}
             >
               {Array.from({ length: barsCount }).map((_, index) => (
