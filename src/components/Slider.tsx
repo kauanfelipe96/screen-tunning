@@ -83,7 +83,7 @@ function Slider() {
 
         return (
           <div key={label} className="flex items-center justify-center">
-            <h1 className="font-['Aldrich'] text-slate-50 mr-2">{label}</h1>
+            <h1 className="font-['Aldrich'] text-slate-50 mr-2  text-sm font-bold">{label}</h1>
             <div
               className={`${style.box} cursor-pointer`}
               onMouseDown={(e) => handleDrag(e, label)}
@@ -101,7 +101,7 @@ function Slider() {
               ))}
             </div>
             <div
-              className={`${style.box} w-[100px] text-white font-bold text-2xl pl-10 font-['Aldrich']`}
+              className={`${style.box} w-[60px] text-white font-bold text-md font-['Aldrich']`}
             >
               {Math.round(values[label])}
             </div>
