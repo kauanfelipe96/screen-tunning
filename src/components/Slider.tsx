@@ -88,6 +88,15 @@ function Slider() {
     "#0000ff"
   );
 
+  const handleReset = () => {
+    setValues({
+      ACC: 0,
+      TSP: 0,
+      TRA: 0,
+      BRA: 0,
+    });
+  };
+
   return (
     <div
       className="flex flex-col items-center justify-center gap-2 onMouseUp={handleMouseUp}
@@ -130,7 +139,7 @@ function Slider() {
         );
       })}
       <div className="flex items-center justify-center gap-2 p-3 rounded-t-xl ">
-        <MdOutlineRefresh className="text-[30px] bg-black text-gray-400 p-1  hover:text-red-400  rounded-md duration-500 cursor-pointer shadow-sm hover:shadow-red-500" />
+        <MdOutlineRefresh className="text-[30px] bg-black text-gray-400 p-1  hover:text-red-400  rounded-md duration-500 cursor-pointer shadow-sm hover:shadow-red-500" onClick={handleReset} />
         <MdSave className="text-[30px] bg-black text-gray-400 p-1  hover:text-blue-800 rounded-md duration-500 cursor-pointer shadow-sm hover:shadow-blue-800" />
         <MdCheckCircleOutline className="text-[30px] bg-black text-gray-400 p-1 hover:text-green-400 rounded-md duration-500 cursor-pointer shadow-sm hover:shadow-green-800" />
       </div>
