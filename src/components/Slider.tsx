@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { style } from "../style";
+import { MdOutlineRefresh, MdSave, MdCheckCircleOutline } from "react-icons/md";
 
 const barsCount = 15;
 
@@ -27,7 +28,7 @@ function Slider() {
   };
 
   const handleMouseMove = (e: React.MouseEvent, label: LabelType) => {
-    if (e.buttons === 1  && activeSlider === label) {
+    if (e.buttons === 1 && activeSlider === label) {
       handleDrag(e, label);
     }
   };
@@ -36,8 +37,8 @@ function Slider() {
   };
 
   const handleMouseDown = (e: React.MouseEvent, label: LabelType) => {
-    setActiveSlider(label); 
-    handleDrag(e, label); 
+    setActiveSlider(label);
+    handleDrag(e, label);
   };
 
   const generateGradientColors = (
@@ -88,14 +89,22 @@ function Slider() {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center gap-2 onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseUp}">
+    <div
+      className="flex flex-col items-center justify-center gap-2 onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}"
+    >
       {(["ACC", "TSP", "TRA", "BRA"] as LabelType[]).map((label) => {
         const barValue = Math.round((values[label] / 100) * barsCount);
 
         return (
-          <div key={label} className="flex items-center justify-center" onMouseUp={handleMouseUp}>
-            <h1 className="font-['Aldrich'] text-slate-50 mr-2  text-sm font-bold">{label}</h1>
+          <div
+            key={label}
+            className="flex items-center justify-center"
+            onMouseUp={handleMouseUp}
+          >
+            <h1 className="font-['Aldrich'] text-slate-50 mr-2  text-sm font-bold">
+              {label}
+            </h1>
             <div
               className={`${style.box} cursor-pointer`}
               onMouseDown={(e) => handleMouseDown(e, label)}
@@ -120,6 +129,11 @@ function Slider() {
           </div>
         );
       })}
+      <div className="flex items-center justify-center gap-2 p-3 rounded-t-xl ">
+        <MdOutlineRefresh className="text-[30px] bg-black text-gray-400 p-1  hover:text-red-400  rounded-md duration-500 cursor-pointer shadow-sm hover:shadow-red-500" />
+        <MdSave className="text-[30px] bg-black text-gray-400 p-1  hover:text-blue-800 rounded-md duration-500 cursor-pointer shadow-sm hover:shadow-blue-800" />
+        <MdCheckCircleOutline className="text-[30px] bg-black text-gray-400 p-1 hover:text-green-400 rounded-md duration-500 cursor-pointer shadow-sm hover:shadow-green-800" />
+      </div>
     </div>
   );
 }
