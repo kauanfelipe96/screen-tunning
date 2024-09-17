@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { style } from "../style";
 import { MdOutlineRefresh, MdSave, MdCheckCircleOutline } from "react-icons/md";
 
+
 const barsCount = 15;
 
 type LabelType = "ACC" | "TSP" | "TRA" | "BRA";
