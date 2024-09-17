@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { style } from "../style";
-import { MdOutlineRefresh, MdSave, MdCheckCircleOutline } from "react-icons/md";
-
+import {
+  MdOutlineRefresh,
+  MdSave,
+  MdCheckCircleOutline,
+  MdArrowBack,
+} from "react-icons/md";
 
 const barsCount = 15;
 
 type LabelType = "ACC" | "TSP" | "TRA" | "BRA";
 
-function Slider() {
+function Slider({ setShow }: { setShow: (value: boolean) => void }) {
   const [values, setValues] = useState<Record<LabelType, number>>({
     ACC: 0,
     TSP: 0,
@@ -140,7 +144,14 @@ function Slider() {
         );
       })}
       <div className="flex items-center justify-center gap-2 p-3 rounded-t-xl ">
-        <MdOutlineRefresh className="text-[30px] bg-black text-gray-400 p-1  hover:text-red-400  rounded-md duration-500 cursor-pointer shadow-sm hover:shadow-red-500" onClick={handleReset} />
+        <MdArrowBack
+          className="text-[30px] bg-black text-gray-400 p-1  hover:text-orange-400  rounded-md duration-500 cursor-pointer shadow-sm hover:shadow-orange-500"
+          onClick={() => setShow(false)}
+        />
+        <MdOutlineRefresh
+          className="text-[30px] bg-black text-gray-400 p-1  hover:text-red-400  rounded-md duration-500 cursor-pointer shadow-sm hover:shadow-red-500"
+          onClick={handleReset}
+        />
         <MdSave className="text-[30px] bg-black text-gray-400 p-1  hover:text-blue-800 rounded-md duration-500 cursor-pointer shadow-sm hover:shadow-blue-800" />
         <MdCheckCircleOutline className="text-[30px] bg-black text-gray-400 p-1 hover:text-green-400 rounded-md duration-500 cursor-pointer shadow-sm hover:shadow-green-800" />
       </div>
