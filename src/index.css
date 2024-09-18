@@ -44,14 +44,14 @@
     display: block;
     width: 80px;
     height: 160%;
-    background: linear-gradient(90deg, transparent, #108ead, #108ead, #108ead, #108ead, transparent);
+    background: linear-gradient(90deg, transparent, #3f51b1, #5a55ae, #cc6b8e, #f7c978 , transparent);
     animation: rotation_481 5000ms infinite linear;
   }
   
   .back-content {
     position: absolute;
     width: 98%;
-    height: 98%;
+    height: 97%;
     background-color: #151515;
     border-radius: 5px;
     color: white;
@@ -134,14 +134,14 @@
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    background-color: #ffbb66;
+    background-color: #108ead;
     position: relative;
     filter: blur(15px);
     animation: floating 2600ms infinite linear;
   }
   
   #bottom {
-    background-color: #ff8866;
+    background-color: #108ead;
     left: 50px;
     top: 0px;
     width: 150px;
@@ -150,7 +150,7 @@
   }
   
   #right {
-    background-color: #ff2233;
+    background-color: #108ead;
     left: 160px;
     top: -80px;
     width: 30px;
