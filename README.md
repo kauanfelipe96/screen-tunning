@@ -1,50 +1,47 @@
-# React + TypeScript + Vite
+# Vehicle Tuning Screen with React, Vite, TypeScript, and Tailwind CSS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was developed in collaboration with a FiveM city to allow players to modify and test their vehicles' performance. Players can tune their cars, save up to three different configurations, and test them before finalizing their modifications. Once satisfied, they can proceed to the mechanic's dynamometer to register their vehicle's stats.
 
-Currently, two official plugins are available:
+This project served as an opportunity to enhance my skills in React, Vite, TypeScript, Tailwind CSS, and FiveM integration, and it is actively used in the city.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
 
-## Expanding the ESLint configuration
+- **React**: A JavaScript library for building user interfaces.
+- **Vite**: A lightning-fast build tool for modern web projects.
+- **TypeScript**: Adds static typing to JavaScript, improving code reliability.
+- **Tailwind CSS**: A utility-first CSS framework for styling the project with ease.
+- **Lua**: A lightweight, high-level scripting language used for server-side scripting in FiveM.
+- **Axios**: For backend communication.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- **Vehicle Tuning**: Allows players to modify car attributes like speed, acceleration, and handling.
+- **Saved Configurations**: Players can save up to three different configurations for testing and comparison.
+- **User-Friendly Interface**: Simplifies the tuning process with an intuitive and responsive design.
+- **Integration with FiveM**: Seamlessly integrates with the FiveM platform for a dynamic gaming experience.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Insights and Learnings 
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Working on this project was an exciting challenge that allowed me to:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Develop a deeper understanding of React, TypeScript, and Tailwind CSS.
+- Improve my skills in Lua scripting for FiveM.
+- Build an interactive tuning system that enhances player immersion and functionality within the game.
+
+## How to Run
+
+1. Clone this repository:
+   ```sh
+   git clone https://github.com/kauanfelipe96/screen-tunning.git
+
+2. Navigate to the project directory:
+   ```sh
+   cd screen-tunning
+3. Install dependencies:
+   ```sh
+   npm install
+
+4. Start the project:
+   ```sh
+   npm run dev
